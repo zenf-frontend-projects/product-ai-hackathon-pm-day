@@ -94,12 +94,11 @@ window.DECK = {
   schedule: {
     h: "Today's shape.",
     rows: [
-      { time: "09:45 — 10:00", title: "Kickoff",          desc: "This. Format and what shipped looks like." },
-      { time: "10:00 — 11:00", title: "Start building",   desc: "Pick a problem. Commit in Slack. Begin." },
-      { time: "11:00 — 11:15", title: "Checkpoint 1",     desc: "One-liner in Slack: what are you making?", checkpoint: true },
-      { time: "11:15 — 13:30", title: "Build + lunch",    desc: "Keep going. Eat whenever." },
-      { time: "13:30 — 14:00", title: "Show-and-tell",    desc: "Squad check-in. Unblock, share, nudge.", checkpoint: true },
-      { time: "14:00 — 16:30", title: "Final push",       desc: "Polish. Prep a tight 3-min demo." },
+      { time: "10:30 — 11:00", title: "Kickoff",          desc: "This. Format and what shipped looks like." },
+      { time: "11:00 — 11:15", title: "Checkpoint 1",     desc: "One-liner in Slack: what are you building?", checkpoint: true },
+      { time: "11:15 — 14:00", title: "Build",            desc: "Keep building. Eat whenever." },
+      { time: "14:00 — 14:30", title: "Show-and-tell",    desc: "Squad check-in. Unblock, share, nudge.", checkpoint: true },
+      { time: "14:30 — 16:30", title: "Final push",       desc: "Polish. Prep a tight 3-min demo." },
       { time: "16:30 — 17:00", title: "Squad demos",      desc: "Every PM demos to their squad. 3 min each.", checkpoint: true },
       { time: "17:00 — 18:00", title: "Final demos + wrap", desc: "Each squad picks one to show the whole team.", checkpoint: true },
     ],
