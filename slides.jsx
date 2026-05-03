@@ -65,6 +65,26 @@ function Slide({ idx, total, label, children, body }) {
 
 const Em = ({ children }) => <em style={{ fontStyle: 'italic', color: A.accent }}>{children}</em>;
 
+// Plays an HLS (.m3u8) source: native in Safari, hls.js elsewhere.
+function MuxVideo({ src, style, ...rest }) {
+  const ref = React.useRef(null);
+  React.useEffect(() => {
+    const v = ref.current;
+    if (!v || !src) return;
+    if (v.canPlayType('application/vnd.apple.mpegurl')) {
+      v.src = src;
+      return;
+    }
+    if (window.Hls && window.Hls.isSupported()) {
+      const hls = new window.Hls();
+      hls.loadSource(src);
+      hls.attachMedia(v);
+      return () => hls.destroy();
+    }
+  }, [src]);
+  return <video ref={ref} autoPlay muted loop playsInline style={style} {...rest} />;
+}
+
 // 1 — Title
 function S1Title({ idx, total }) {
   const t = window.DECK.title;
@@ -77,7 +97,7 @@ function S1Title({ idx, total }) {
         autoPlay muted loop playsInline
         style={{
           position: 'absolute', inset: 0, width: '100%', height: '100%',
-          objectFit: 'cover', filter: 'blur(28px) saturate(1.05) hue-rotate(80deg)',
+          objectFit: 'cover', filter: 'blur(28px) saturate(1.1)',
           transform: 'scale(1.12)', zIndex: 0,
         }}
       />
@@ -86,7 +106,7 @@ function S1Title({ idx, total }) {
       }}/>
       <div style={{
         position: 'absolute', inset: 0,
-        background: 'radial-gradient(ellipse at 30% 40%, rgba(31,138,58,0.22), transparent 70%)',
+        background: 'radial-gradient(ellipse at 30% 40%, rgba(190,90,170,0.26), transparent 70%)',
         zIndex: 1, mixBlendMode: 'multiply',
       }}/>
       <div style={{
@@ -95,7 +115,7 @@ function S1Title({ idx, total }) {
       }}>
         <div style={{ ...labelEyebrow, marginBottom: 28 }}>{t.kicker}</div>
       <h1 style={{ ...h1, fontSize: 220, maxWidth: '12ch' }}>
-        Ship<br />something<br /><Em>today</Em>
+        Product AI<br /><Em>Hackathon</Em>
         <span style={{
           display: 'inline-block', width: '0.5em', height: '0.085em',
           background: A.accent, marginLeft: 12, verticalAlign: 'baseline',
@@ -307,7 +327,7 @@ function S8Close({ idx, total }) {
   return (
     <div style={{ ...slideStyle, padding: 0 }} data-screen-label={`${String(idx).padStart(2, '0')} Close`}>
       <video
-        src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260417_061226_74f0749c-a22d-42b3-895e-5d6203bc741c.mp4"
+        src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260302_085640_276ea93b-d7da-4418-a09b-2aa5b490e838.mp4"
         autoPlay muted loop playsInline
         style={{
           position: 'absolute', inset: 0, width: '100%', height: '100%',
@@ -328,8 +348,8 @@ function S8Close({ idx, total }) {
         padding: '64px 88px', display: 'flex', flexDirection: 'column', justifyContent: 'center'
       }}>
         <div style={labelEyebrow}>Now</div>
-        <h2 style={{ ...h1, fontSize: 360, lineHeight: 0.92, marginTop: 16 }}>
-          Go build<Em>.</Em>
+        <h2 style={{ ...h1, fontSize: 240, lineHeight: 0.92, marginTop: 16 }}>
+          Build<br />something<br />cool<Em>!</Em>
         </h2>
         <div style={{ marginTop: 52, fontFamily: A.fontDisp, fontSize: 32, color: A.inkSoft, maxWidth: '40ch' }}>
           {c.sub}
