@@ -296,17 +296,17 @@ function S7Rules({ idx, total }) {
   return (
     <Slide idx={idx} total={total} label="Rules">
       <div style={{ display: 'grid', gridTemplateColumns: '1.5fr 1fr', gap: 88, alignItems: 'center', height: '100%' }}>
-        <div style={{ display: 'flex', flexDirection: 'column', gap: 24 }}>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 18 }}>
           {r.items.map((it, i) =>
           <div key={i} style={{
-            border: `1px solid ${A.rule}`, borderRadius: 12, padding: '34px 36px',
+            border: `1px solid ${A.rule}`, borderRadius: 12, padding: '22px 32px',
             background: A.bgPanel,
             display: 'grid', gridTemplateColumns: 'auto 1fr', columnGap: 32, alignItems: 'baseline'
           }}>
               <div style={{ fontFamily: A.fontDisp, fontStyle: 'italic', fontSize: 22, color: A.accent }}>{it.n}</div>
               <div>
-                <div style={{ fontFamily: A.fontDisp, fontSize: 30, color: A.accent, lineHeight: 1.15, letterSpacing: '-0.01em' }}>{it.title}</div>
-                <div style={{ fontSize: 18, color: A.inkSoft, lineHeight: 1.5, marginTop: 10 }}>{it.body}</div>
+                <div style={{ fontFamily: A.fontDisp, fontSize: 28, color: A.accent, lineHeight: 1.15, letterSpacing: '-0.01em' }}>{it.title}</div>
+                <div style={{ fontSize: 17, color: A.inkSoft, lineHeight: 1.45, marginTop: 8 }}>{it.body}</div>
               </div>
             </div>
           )}

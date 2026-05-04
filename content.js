@@ -109,11 +109,12 @@ window.DECK = {
     h: "House rules.",
     sub: "Short list. Take them seriously enough.",
     items: [
-      { n: "01", title: "Build solo.",              body: "You learn more with hands on the keyboard. Pair only if it's clearly better." },
-      { n: "02", title: "Ship something useful.",   body: "Build for after today. If your squad won't touch it next week, pick something else." },
-      { n: "03", title: "Brainstorm out loud.",     body: "Stuck? Grab Zen, grab a colleague, grab Claude. Don't sit silent for an hour." },
-      { n: "04", title: "Demo by EOD.",             body: "If it doesn't get shown, it didn't happen. 3 minutes is enough." },
-      { n: "05", title: "Have fun.",                body: "This is the rare day with no roadmap pressure. Use it." },
+      { n: "01", title: "No BAU.",                  body: "We've carved out today's time to build. Respect that and protect your time." },
+      { n: "02", title: "Build solo.",              body: "You learn more with hands on the keyboard. Pair only if it's clearly better." },
+      { n: "03", title: "Ship something useful.",   body: "Build for after today. If your squad won't touch it next week, pick something else." },
+      { n: "04", title: "Brainstorm out loud.",     body: "Stuck? Grab Zen, grab a colleague, grab Claude. Don't sit silent for an hour." },
+      { n: "05", title: "Demo by EOD.",             body: "If it doesn't get shown, it didn't happen. 3 minutes is enough." },
+      { n: "06", title: "Have fun.",                body: "This is the rare day with no roadmap pressure. Use it." },
     ],
   },
 
